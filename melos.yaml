@@ -1,0 +1,44 @@
+name: open_agenda_monorepo
+
+packages:
+  - apps/*
+  - packages/*
+
+command:
+  bootstrap:
+    runPubGetInParallel: false
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    run: flutter analyze .
+    exec:
+      concurrency: 1
+  
+  format:
+    run: dart format . --set-exit-if-changed
+    exec:
+      concurrency: 1
+  
+  test:
+    run: flutter test
+    exec:
+      concurrency: 1
+  
+  build:android:
+    run: flutter build apk --release
+    packageFilters:
+      dirExists: android
+    exec:
+      concurrency: 1
+  
+  build:ios:
+    run: flutter build ios --release --no-codesign
+    packageFilters:
+      dirExists: ios
+    exec:
+      concurrency: 1
+
+ide:
+  intellij:
+    enabled: true
