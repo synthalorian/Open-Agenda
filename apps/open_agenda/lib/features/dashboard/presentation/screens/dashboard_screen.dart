@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:open_agenda_core/open_agenda_core.dart';
 
-import '../../../../../ui/atoms/glass_card.dart';
-import '../../../../../ui/atoms/neon_button.dart';
-
 /// Dashboard screen - Main hub for teachers
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -256,7 +253,7 @@ class DashboardScreen extends StatelessWidget {
                           icon: Icons.coffee,
                           color: AppColors.neonYellow,
                           onPressed: () {
-                            // Link: https://www.buymeacoffee.com/synthalorian
+                            // TODO: launchUrl('https://www.buymeacoffee.com/synthalorian');
                           },
                         ),
                       ),
@@ -268,7 +265,7 @@ class DashboardScreen extends StatelessWidget {
                           color: AppColors.neonCyan,
                           isOutlined: true,
                           onPressed: () {
-                            // Link: https://github.com/synthalorian/Open-Agenda
+                            // TODO: launchUrl('https://github.com/synthalorian/Open-Agenda');
                           },
                         ),
                       ),
