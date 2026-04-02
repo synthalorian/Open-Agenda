@@ -1,0 +1,40 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$LessonPlanImpl _$$LessonPlanImplFromJson(Map<String, dynamic> json) =>
+    _$LessonPlanImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      subject: json['subject'] as String,
+      date: DateTime.parse(json['date'] as String),
+      startTime: json['startTime'] as String,
+      endTime: json['endTime'] as String,
+      objective: json['objective'] as String,
+      materials: (json['materials'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      activities: json['activities'] as String,
+      assessment: json['assessment'] as String?,
+      notes: json['notes'] as String?,
+      isCompleted: json['isCompleted'] as bool? ?? false,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+    );
+
+Map<String, dynamic> _$$LessonPlanImplToJson(_$LessonPlanImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'subject': instance.subject,
+      'date': instance.date.toIso8601String(),
+      'startTime': instance.startTime,
+      'endTime': instance.endTime,
+      'objective': instance.objective,
+      'materials': instance.materials,
+      'activities': instance.activities,
+      'assessment': instance.assessment,
+      'notes': instance.notes,
+      'isCompleted': instance.isCompleted,
+      'createdAt': instance.createdAt.toIso8601String(),
+    };

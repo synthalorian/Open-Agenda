@@ -65,19 +65,10 @@ class MainShell extends StatelessWidget {
   }
 
   Widget? _buildFAB(BuildContext context) {
-    // Show different FAB based on current route
     if (currentPath.startsWith('/students')) {
       return _NeonFAB(
         icon: Icons.person_add,
-        onPressed: () {
-          // TODO: Add student
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Add student - coming soon'),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
+        onPressed: () => context.push('/students/add'),
         tooltip: 'Add Student',
       );
     }
@@ -85,31 +76,15 @@ class MainShell extends StatelessWidget {
     if (currentPath.startsWith('/grades')) {
       return _NeonFAB(
         icon: Icons.add_chart,
-        onPressed: () {
-          // TODO: Add grade entry
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Add grade - coming soon'),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
-        tooltip: 'Add Grade',
+        onPressed: () => context.push('/grades/assignment/add'),
+        tooltip: 'Add Assignment',
       );
     }
 
     if (currentPath.startsWith('/attendance')) {
       return _NeonFAB(
         icon: Icons.fact_check,
-        onPressed: () {
-          // TODO: Take attendance
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Take attendance - coming soon'),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
+        onPressed: () => context.push('/attendance/take'),
         tooltip: 'Take Attendance',
       );
     }
@@ -117,15 +92,7 @@ class MainShell extends StatelessWidget {
     if (currentPath.startsWith('/planning')) {
       return _NeonFAB(
         icon: Icons.add_task,
-        onPressed: () {
-          // TODO: Add lesson plan
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Add lesson plan - coming soon'),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
+        onPressed: () => context.push('/planning/add'),
         tooltip: 'Add Lesson Plan',
       );
     }
@@ -133,15 +100,7 @@ class MainShell extends StatelessWidget {
     if (currentPath.startsWith('/iep')) {
       return _NeonFAB(
         icon: Icons.playlist_add,
-        onPressed: () {
-          // TODO: Add IEP goal
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Add IEP goal - coming soon'),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
+        onPressed: () => context.push('/iep/add'),
         tooltip: 'Add IEP Goal',
       );
     }

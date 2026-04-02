@@ -1,0 +1,32 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$AttendanceRecordImpl _$$AttendanceRecordImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AttendanceRecordImpl(
+      id: json['id'] as String,
+      studentId: json['studentId'] as String,
+      date: DateTime.parse(json['date'] as String),
+      status: $enumDecode(_$AttendanceStatusEnumMap, json['status']),
+      notes: json['notes'] as String?,
+      periodNumber: (json['periodNumber'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$$AttendanceRecordImplToJson(
+        _$AttendanceRecordImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'studentId': instance.studentId,
+      'date': instance.date.toIso8601String(),
+      'status': _$AttendanceStatusEnumMap[instance.status]!,
+      'notes': instance.notes,
+      'periodNumber': instance.periodNumber,
+    };
+
+const _$AttendanceStatusEnumMap = {
+  AttendanceStatus.present: 'present',
+  AttendanceStatus.absent: 'absent',
+  AttendanceStatus.tardy: 'tardy',
+  AttendanceStatus.excused: 'excused',
+};

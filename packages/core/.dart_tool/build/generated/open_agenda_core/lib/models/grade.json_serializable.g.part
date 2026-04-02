@@ -1,0 +1,57 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$AssignmentImpl _$$AssignmentImplFromJson(Map<String, dynamic> json) =>
+    _$AssignmentImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      subject: json['subject'] as String,
+      dueDate: DateTime.parse(json['dueDate'] as String),
+      totalPoints: (json['totalPoints'] as num).toDouble(),
+      category: $enumDecode(_$AssignmentCategoryEnumMap, json['category']),
+      description: json['description'] as String?,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+    );
+
+Map<String, dynamic> _$$AssignmentImplToJson(_$AssignmentImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'subject': instance.subject,
+      'dueDate': instance.dueDate.toIso8601String(),
+      'totalPoints': instance.totalPoints,
+      'category': _$AssignmentCategoryEnumMap[instance.category]!,
+      'description': instance.description,
+      'createdAt': instance.createdAt.toIso8601String(),
+    };
+
+const _$AssignmentCategoryEnumMap = {
+  AssignmentCategory.homework: 'homework',
+  AssignmentCategory.quiz: 'quiz',
+  AssignmentCategory.test: 'test',
+  AssignmentCategory.project: 'project',
+  AssignmentCategory.participation: 'participation',
+};
+
+_$GradeEntryImpl _$$GradeEntryImplFromJson(Map<String, dynamic> json) =>
+    _$GradeEntryImpl(
+      id: json['id'] as String,
+      studentId: json['studentId'] as String,
+      assignmentId: json['assignmentId'] as String,
+      pointsEarned: (json['pointsEarned'] as num).toDouble(),
+      isExcused: json['isExcused'] as bool? ?? false,
+      notes: json['notes'] as String?,
+      gradedAt: DateTime.parse(json['gradedAt'] as String),
+    );
+
+Map<String, dynamic> _$$GradeEntryImplToJson(_$GradeEntryImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'studentId': instance.studentId,
+      'assignmentId': instance.assignmentId,
+      'pointsEarned': instance.pointsEarned,
+      'isExcused': instance.isExcused,
+      'notes': instance.notes,
+      'gradedAt': instance.gradedAt.toIso8601String(),
+    };

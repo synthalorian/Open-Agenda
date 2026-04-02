@@ -1,0 +1,138 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'attendance.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class AttendanceRecordAdapter extends TypeAdapter<AttendanceRecord> {
+  @override
+  final int typeId = 4;
+
+  @override
+  AttendanceRecord read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return AttendanceRecord(
+      id: fields[0] as String,
+      studentId: fields[1] as String,
+      date: fields[2] as DateTime,
+      status: fields[3] as AttendanceStatus,
+      notes: fields[4] as String?,
+      periodNumber: fields[5] as int?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, AttendanceRecord obj) {
+    writer
+      ..writeByte(6)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.studentId)
+      ..writeByte(2)
+      ..write(obj.date)
+      ..writeByte(3)
+      ..write(obj.status)
+      ..writeByte(4)
+      ..write(obj.notes)
+      ..writeByte(5)
+      ..write(obj.periodNumber);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is AttendanceRecordAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class AttendanceStatusAdapter extends TypeAdapter<AttendanceStatus> {
+  @override
+  final int typeId = 5;
+
+  @override
+  AttendanceStatus read(BinaryReader reader) {
+    switch (reader.readByte()) {
+      case 0:
+        return AttendanceStatus.present;
+      case 1:
+        return AttendanceStatus.absent;
+      case 2:
+        return AttendanceStatus.tardy;
+      case 3:
+        return AttendanceStatus.excused;
+      default:
+        return AttendanceStatus.present;
+    }
+  }
+
+  @override
+  void write(BinaryWriter writer, AttendanceStatus obj) {
+    switch (obj) {
+      case AttendanceStatus.present:
+        writer.writeByte(0);
+        break;
+      case AttendanceStatus.absent:
+        writer.writeByte(1);
+        break;
+      case AttendanceStatus.tardy:
+        writer.writeByte(2);
+        break;
+      case AttendanceStatus.excused:
+        writer.writeByte(3);
+        break;
+    }
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is AttendanceStatusAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$AttendanceRecordImpl _$$AttendanceRecordImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AttendanceRecordImpl(
+      id: json['id'] as String,
+      studentId: json['studentId'] as String,
+      date: DateTime.parse(json['date'] as String),
+      status: $enumDecode(_$AttendanceStatusEnumMap, json['status']),
+      notes: json['notes'] as String?,
+      periodNumber: (json['periodNumber'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$$AttendanceRecordImplToJson(
+        _$AttendanceRecordImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'studentId': instance.studentId,
+      'date': instance.date.toIso8601String(),
+      'status': _$AttendanceStatusEnumMap[instance.status]!,
+      'notes': instance.notes,
+      'periodNumber': instance.periodNumber,
+    };
+
+const _$AttendanceStatusEnumMap = {
+  AttendanceStatus.present: 'present',
+  AttendanceStatus.absent: 'absent',
+  AttendanceStatus.tardy: 'tardy',
+  AttendanceStatus.excused: 'excused',
+};

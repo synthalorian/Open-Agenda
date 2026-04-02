@@ -40,6 +40,9 @@ dependencies:
   pdf: ^3.10.7
   printing: ^5.11.1
   
+  # URL
+  url_launcher: ^6.2.0
+
   # Utilities
   uuid: ^4.2.2
   freezed_annotation: ^2.4.1

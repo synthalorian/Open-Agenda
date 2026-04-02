@@ -1,0 +1,92 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'teacher_profile.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class TeacherProfileAdapter extends TypeAdapter<TeacherProfile> {
+  @override
+  final int typeId = 10;
+
+  @override
+  TeacherProfile read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return TeacherProfile(
+      id: fields[0] as String,
+      name: fields[1] as String,
+      email: fields[2] as String?,
+      school: fields[3] as String?,
+      subjects: (fields[4] as List).cast<String>(),
+      gradesTaught: (fields[5] as List).cast<int>(),
+      pin: fields[6] as String?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, TeacherProfile obj) {
+    writer
+      ..writeByte(7)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.name)
+      ..writeByte(2)
+      ..write(obj.email)
+      ..writeByte(3)
+      ..write(obj.school)
+      ..writeByte(4)
+      ..write(obj.subjects)
+      ..writeByte(5)
+      ..write(obj.gradesTaught)
+      ..writeByte(6)
+      ..write(obj.pin);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TeacherProfileAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$TeacherProfileImpl _$$TeacherProfileImplFromJson(Map<String, dynamic> json) =>
+    _$TeacherProfileImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      email: json['email'] as String?,
+      school: json['school'] as String?,
+      subjects: (json['subjects'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      gradesTaught: (json['gradesTaught'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList() ??
+          const [],
+      pin: json['pin'] as String?,
+    );
+
+Map<String, dynamic> _$$TeacherProfileImplToJson(
+        _$TeacherProfileImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'email': instance.email,
+      'school': instance.school,
+      'subjects': instance.subjects,
+      'gradesTaught': instance.gradesTaught,
+      'pin': instance.pin,
+    };
