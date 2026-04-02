@@ -1,0 +1,37 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$StudentImpl _$$StudentImplFromJson(Map<String, dynamic> json) =>
+    _$StudentImpl(
+      id: json['id'] as String,
+      firstName: json['firstName'] as String,
+      lastName: json['lastName'] as String,
+      grade: (json['grade'] as num).toInt(),
+      section: json['section'] as String? ?? 'A',
+      email: json['email'] as String?,
+      parentEmail: json['parentEmail'] as String?,
+      parentPhone: json['parentPhone'] as String?,
+      notes: json['notes'] as String?,
+      hasIEP: json['hasIEP'] as bool? ?? false,
+      isActive: json['isActive'] as bool? ?? true,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      photoUrl: json['photoUrl'] as String?,
+    );
+
+Map<String, dynamic> _$$StudentImplToJson(_$StudentImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'grade': instance.grade,
+      'section': instance.section,
+      'email': instance.email,
+      'parentEmail': instance.parentEmail,
+      'parentPhone': instance.parentPhone,
+      'notes': instance.notes,
+      'hasIEP': instance.hasIEP,
+      'isActive': instance.isActive,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'photoUrl': instance.photoUrl,
+    };

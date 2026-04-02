@@ -10,6 +10,15 @@ import 'app/theme_controller.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize Hive local storage
+  await HiveService.init();
+
+  // Seed sample data in debug mode
+  assert(() {
+    SeedData.seedIfEmpty();
+    return true;
+  }());
+
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
