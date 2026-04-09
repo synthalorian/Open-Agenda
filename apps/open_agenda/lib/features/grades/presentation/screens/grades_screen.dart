@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:open_agenda_core/open_agenda_core.dart';
+import 'package:printing/printing.dart';
 
 import '../providers/grades_providers.dart';
 
@@ -30,7 +31,33 @@ class GradesScreen extends ConsumerWidget {
     final assignmentsAsync = ref.watch(assignmentsBySubjectProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Grades')),
+      appBar: AppBar(
+        title: const Text('Grades'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.picture_as_pdf),
+            tooltip: 'Export Grade Report',
+            onPressed: () async {
+              final students =
+                  await ref.read(allStudentsProvider.future);
+              final assignments =
+                  await ref.read(allAssignmentsProvider.future);
+              final entries = await ref
+                  .read(gradeEntryRepositoryProvider)
+                  .getAll();
+              final doc = PdfExportService.generateGradeReport(
+                students: students,
+                assignments: assignments,
+                entries: entries,
+              );
+              await Printing.layoutPdf(
+                onLayout: (_) => doc.save(),
+                name: 'Grade_Report',
+              );
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           SingleChildScrollView(

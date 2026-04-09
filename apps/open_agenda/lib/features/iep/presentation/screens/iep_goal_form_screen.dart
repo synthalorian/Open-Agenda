@@ -166,8 +166,9 @@ class _IEPGoalFormScreenState extends ConsumerState<IEPGoalFormScreen> {
                   firstDate: DateTime.now(),
                   lastDate: DateTime(2030),
                 );
-                if (picked != null)
+                if (picked != null) {
                   setState(() => _targetDate = picked);
+                }
               },
             ),
             const SizedBox(height: 16),

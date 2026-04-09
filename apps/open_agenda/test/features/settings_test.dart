@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:open_agenda_core/open_agenda_core.dart';
 
@@ -15,7 +13,7 @@ void main() {
 
   group('TeacherProfile in settings context', () {
     test('profile with all fields', () {
-      final profile = TeacherProfile(
+      const profile = TeacherProfile(
         id: 'default',
         name: 'Ms. Smith',
         email: 'smith@school.edu',
@@ -30,7 +28,7 @@ void main() {
     });
 
     test('profile with minimal fields', () {
-      final profile = TeacherProfile(
+      const profile = TeacherProfile(
         id: 'default',
         name: 'Teacher',
       );

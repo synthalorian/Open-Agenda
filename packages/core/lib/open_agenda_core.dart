@@ -36,5 +36,8 @@ export 'data/repositories/lesson_plan_repository.dart';
 export 'data/repositories/iep_repository.dart';
 export 'data/repositories/teacher_repository.dart';
 
+// Services
+export 'services/pdf_export_service.dart';
+
 // Providers
 export 'providers/repository_providers.dart';

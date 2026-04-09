@@ -136,7 +136,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.lock_outline,
+          const Icon(Icons.lock_outline,
               size: 48, color: AppColors.neonPurple),
           const SizedBox(height: 16),
           Text(
@@ -176,7 +176,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           ),
           if (_error) ...[
             const SizedBox(height: 12),
-            Text(
+            const Text(
               'Incorrect PIN',
               style: TextStyle(
                   color: AppColors.neonPink, fontSize: 14),
@@ -204,9 +204,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       }
                       if (key == '⌫') {
                         return _PadButton(
+                          onTap: _onBackspace,
                           child: const Icon(Icons.backspace_outlined,
                               size: 22),
-                          onTap: _onBackspace,
                         );
                       }
                       return _PadButton(
