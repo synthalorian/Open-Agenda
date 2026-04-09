@@ -5,6 +5,9 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:open_agenda_core/open_agenda_core.dart';
 
 import '../providers/dashboard_providers.dart';
+import '../widgets/grade_distribution_chart.dart';
+import '../widgets/attendance_trend_chart.dart';
+import '../widgets/subject_performance_chart.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
@@ -152,6 +155,14 @@ class DashboardScreen extends ConsumerWidget {
                     onTap: () => context.go('/iep'),
                   ),
                 ]),
+              ),
+            ),
+
+            // Analytics charts
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: _ChartSection(),
               ),
             ),
 
@@ -393,6 +404,66 @@ class _ScheduleCard extends StatelessWidget {
           const Icon(Icons.chevron_right,
               color: AppColors.textTertiary),
         ],
+      ),
+    );
+  }
+}
+
+class _ChartSection extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final gradesAsync = ref.watch(gradeDistributionProvider);
+    final attendanceAsync = ref.watch(attendanceTrendProvider);
+    final subjectAsync = ref.watch(subjectPerformanceProvider);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Analytics',
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge
+              ?.copyWith(fontWeight: FontWeight.w600),
+        ),
+        const SizedBox(height: 4),
+        gradesAsync.when(
+          loading: () => const _ChartPlaceholder(),
+          error: (_, __) => const SizedBox.shrink(),
+          data: (percentages) =>
+              GradeDistributionChart(percentages: percentages),
+        ),
+        attendanceAsync.when(
+          loading: () => const _ChartPlaceholder(),
+          error: (_, __) => const SizedBox.shrink(),
+          data: (rates) => AttendanceTrendChart(weeklyRates: rates),
+        ),
+        subjectAsync.when(
+          loading: () => const _ChartPlaceholder(),
+          error: (_, __) => const SizedBox.shrink(),
+          data: (averages) =>
+              SubjectPerformanceChart(subjectAverages: averages),
+        ),
+        const SizedBox(height: 12),
+      ],
+    );
+  }
+}
+
+class _ChartPlaceholder extends StatelessWidget {
+  const _ChartPlaceholder();
+
+  @override
+  Widget build(BuildContext context) {
+    return GlassCard(
+      child: SizedBox(
+        height: 200,
+        child: Center(
+          child: CircularProgressIndicator(
+            color: AppColors.neonCyan.withOpacity(0.5),
+            strokeWidth: 2,
+          ),
+        ),
       ),
     );
   }

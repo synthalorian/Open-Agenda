@@ -76,6 +76,66 @@ class DashboardStats {
   });
 }
 
+/// Computes a list of percentage scores for every grade entry.
+/// Each entry becomes (pointsEarned / assignment.totalPoints) * 100.
+final gradeDistributionProvider = FutureProvider<List<double>>((ref) async {
+  final gradeRepo = ref.watch(gradeEntryRepositoryProvider);
+  final assignmentRepo = ref.watch(assignmentRepositoryProvider);
+  final allGrades = await gradeRepo.getAll();
+
+  final List<double> percentages = [];
+  for (final g in allGrades) {
+    final a = await assignmentRepo.getById(g.assignmentId);
+    if (a != null && a.totalPoints > 0) {
+      percentages.add((g.pointsEarned / a.totalPoints) * 100);
+    }
+  }
+  return percentages;
+});
+
+/// Computes the overall attendance rate for each of the last 4 weeks.
+/// Returns a list of 4 doubles (0-100), oldest week first.
+final attendanceTrendProvider = FutureProvider<List<double>>((ref) async {
+  final attendanceRepo = ref.watch(attendanceRepositoryProvider);
+  final now = DateTime.now();
+  final List<double> rates = [];
+
+  for (int w = 3; w >= 0; w--) {
+    final weekEnd = now.subtract(Duration(days: w * 7));
+    final weekStart = weekEnd.subtract(const Duration(days: 6));
+    final rate = await attendanceRepo.getOverallAttendanceRate(weekStart, weekEnd);
+    rates.add(rate);
+  }
+  return rates;
+});
+
+/// Computes average grade percentage per subject.
+/// Returns a map of subject name -> average percentage (0-100).
+final subjectPerformanceProvider =
+    FutureProvider<Map<String, double>>((ref) async {
+  final gradeRepo = ref.watch(gradeEntryRepositoryProvider);
+  final assignmentRepo = ref.watch(assignmentRepositoryProvider);
+  final allGrades = await gradeRepo.getAll();
+
+  // Group percentages by subject
+  final Map<String, List<double>> subjectPcts = {};
+  for (final g in allGrades) {
+    final a = await assignmentRepo.getById(g.assignmentId);
+    if (a != null && a.totalPoints > 0) {
+      final pct = (g.pointsEarned / a.totalPoints) * 100;
+      subjectPcts.putIfAbsent(a.subject.toLowerCase(), () => []).add(pct);
+    }
+  }
+
+  // Average each subject
+  final Map<String, double> averages = {};
+  for (final entry in subjectPcts.entries) {
+    final sum = entry.value.fold(0.0, (s, v) => s + v);
+    averages[entry.key] = sum / entry.value.length;
+  }
+  return averages;
+});
+
 String getGreeting() {
   final hour = DateTime.now().hour;
   if (hour < 12) return 'Good morning,';

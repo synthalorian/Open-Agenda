@@ -120,8 +120,9 @@ class _AssignmentFormScreenState
                   firstDate: DateTime(2024),
                   lastDate: DateTime(2030),
                 );
-                if (picked != null)
+                if (picked != null) {
                   setState(() => _dueDate = picked);
+                }
               },
             ),
             const SizedBox(height: 16),

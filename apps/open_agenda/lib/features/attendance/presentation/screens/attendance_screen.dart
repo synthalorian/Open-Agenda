@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:open_agenda_core/open_agenda_core.dart';
+import 'package:printing/printing.dart';
 
 import '../providers/attendance_providers.dart';
 
@@ -25,7 +26,37 @@ class AttendanceScreen extends ConsumerWidget {
     });
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Attendance')),
+      appBar: AppBar(
+        title: const Text('Attendance'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.picture_as_pdf),
+            tooltip: 'Export Attendance Report',
+            onPressed: () async {
+              final students =
+                  await ref.read(allStudentsProvider.future);
+              final records =
+                  await ref.read(allAttendanceProvider.future);
+              // Export for the currently focused month
+              final focused = ref.read(selectedAttendanceDateProvider);
+              final startDate =
+                  DateTime(focused.year, focused.month, 1);
+              final endDate =
+                  DateTime(focused.year, focused.month + 1, 0);
+              final doc = PdfExportService.generateAttendanceReport(
+                students: students,
+                records: records,
+                startDate: startDate,
+                endDate: endDate,
+              );
+              await Printing.layoutPdf(
+                onLayout: (_) => doc.save(),
+                name: 'Attendance_Report',
+              );
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           TableCalendar(

@@ -161,8 +161,9 @@ class _LessonPlanFormScreenState
                     onTap: () async {
                       final picked = await showTimePicker(
                           context: context, initialTime: _startTime);
-                      if (picked != null)
+                      if (picked != null) {
                         setState(() => _startTime = picked);
+                      }
                     },
                   ),
                 ),
@@ -174,8 +175,9 @@ class _LessonPlanFormScreenState
                     onTap: () async {
                       final picked = await showTimePicker(
                           context: context, initialTime: _endTime);
-                      if (picked != null)
+                      if (picked != null) {
                         setState(() => _endTime = picked);
+                      }
                     },
                   ),
                 ),

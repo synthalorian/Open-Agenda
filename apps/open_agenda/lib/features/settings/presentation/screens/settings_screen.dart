@@ -74,7 +74,7 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 8),
 
           // Appearance
-          _SectionHeader('Appearance'),
+          const _SectionHeader('Appearance'),
           GlassCard(
             child: Column(
               children: [
@@ -110,7 +110,7 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 8),
 
           // Data
-          _SectionHeader('Data'),
+          const _SectionHeader('Data'),
           GlassCard(
             child: Column(
               children: [
@@ -170,7 +170,7 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 8),
 
           // About
-          _SectionHeader('About'),
+          const _SectionHeader('About'),
           GlassCard(
             child: Column(
               children: [
@@ -215,7 +215,7 @@ class SettingsScreen extends ConsumerWidget {
               Navigator.pop(ctx);
               onConfirm();
             },
-            child: Text('Confirm',
+            child: const Text('Confirm',
                 style: TextStyle(color: AppColors.neonPink)),
           ),
         ],

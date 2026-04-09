@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 import 'package:open_agenda_core/open_agenda_core.dart';
+import 'package:printing/printing.dart';
 
 import '../providers/iep_providers.dart';
 
@@ -47,6 +48,44 @@ class IEPGoalDetailScreen extends ConsumerWidget {
           appBar: AppBar(
             title: Text(goal.category),
             actions: [
+              IconButton(
+                icon: const Icon(Icons.picture_as_pdf),
+                tooltip: 'Export IEP Report',
+                onPressed: () async {
+                  Student? student;
+                  studentsAsync.whenData((students) {
+                    student = students
+                        .where((s) => s.id == goal.studentId)
+                        .firstOrNull;
+                  });
+                  if (student == null) return;
+
+                  final goals = await ref
+                      .read(iepGoalRepositoryProvider)
+                      .getAll()
+                      .then((all) => all
+                          .where((g) => g.studentId == goal.studentId)
+                          .toList());
+
+                  final allNotes = <IEPProgressNote>[];
+                  for (final g in goals) {
+                    final notes = await ref
+                        .read(iepProgressNoteRepositoryProvider)
+                        .getByGoal(g.id);
+                    allNotes.addAll(notes);
+                  }
+
+                  final doc = PdfExportService.generateIEPProgressReport(
+                    student: student!,
+                    goals: goals,
+                    notes: allNotes,
+                  );
+                  await Printing.layoutPdf(
+                    onLayout: (_) => doc.save(),
+                    name: 'IEP_Report_${student!.fullName}',
+                  );
+                },
+              ),
               IconButton(
                 icon: const Icon(Icons.edit),
                 onPressed: () => context.push('/iep/${goal.id}/edit'),

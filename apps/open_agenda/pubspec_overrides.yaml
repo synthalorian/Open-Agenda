@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: open_agenda_core
+dependency_overrides:
+  open_agenda_core:
+    path: ../../packages/core
