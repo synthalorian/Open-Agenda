@@ -230,10 +230,9 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2026-04-02T15:10:53.033614Z",
   "generator": "pub",
-  "generatorVersion": "3.4.1",
+  "generatorVersion": "3.11.4",
   "flutterRoot": "file:///home/synth/.local/share/mise/http-tarballs/56a8dcd98f415647d5149eb96158392c68f3dbf85b2dbf2ac6e7e210ec61ef63",
-  "flutterVersion": "3.22.1",
+  "flutterVersion": "3.41.6",
   "pubCache": "file:///home/synth/.pub-cache"
 }

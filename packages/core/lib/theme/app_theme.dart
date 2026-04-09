@@ -125,7 +125,7 @@ class AppTheme {
           ),
           iconTheme: const IconThemeData(color: AppColors.textPrimary),
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           color: AppColors.darkCard,
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -267,7 +267,7 @@ class AppTheme {
             borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
           ),
         ),
-        dialogTheme: DialogTheme(
+        dialogTheme: DialogThemeData(
           backgroundColor: AppColors.darkSurface,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
@@ -289,7 +289,7 @@ class AppTheme {
           ),
           behavior: SnackBarBehavior.floating,
         ),
-        tabBarTheme: TabBarTheme(
+        tabBarTheme: TabBarThemeData(
           labelColor: AppColors.neonPink,
           unselectedLabelColor: AppColors.textTertiary,
           labelStyle: _textTheme.labelLarge,
@@ -386,7 +386,7 @@ class AppTheme {
           ),
           iconTheme: const IconThemeData(color: AppColors.textDark),
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           color: AppColors.lightCard,
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -528,7 +528,7 @@ class AppTheme {
             borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
           ),
         ),
-        dialogTheme: DialogTheme(
+        dialogTheme: DialogThemeData(
           backgroundColor: AppColors.lightSurface,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
@@ -550,7 +550,7 @@ class AppTheme {
           ),
           behavior: SnackBarBehavior.floating,
         ),
-        tabBarTheme: TabBarTheme(
+        tabBarTheme: TabBarThemeData(
           labelColor: AppColors.neonPink,
           unselectedLabelColor: AppColors.textDarkSecondary,
           labelStyle: _textTheme.labelLarge?.copyWith(color: AppColors.textDark),
