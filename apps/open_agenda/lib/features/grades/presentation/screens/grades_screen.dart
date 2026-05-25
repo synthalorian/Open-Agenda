@@ -143,6 +143,7 @@ class GradesScreen extends ConsumerWidget {
                                       .titleSmall
                                       ?.copyWith(
                                           fontWeight: FontWeight.w600),
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                                 const SizedBox(height: 2),
                                 Text(
@@ -153,6 +154,7 @@ class GradesScreen extends ConsumerWidget {
                                       ?.copyWith(
                                           color:
                                               AppColors.textSecondary),
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ],
                             ),

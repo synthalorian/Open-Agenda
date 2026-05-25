@@ -49,7 +49,6 @@ class MainShell extends StatelessWidget {
               '/attendance',
               '/planning',
               '/iep',
-              '/settings',
             ];
             context.go(routes[index]);
           },
