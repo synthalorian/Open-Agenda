@@ -36,7 +36,7 @@ class DashboardScreen extends ConsumerWidget {
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(
                   decoration: const BoxDecoration(
-                    gradient: AppColors.neonGradient,
+                    gradient: AppColors.sw84Gradient,
                   ),
                   child: SafeArea(
                     child: Padding(

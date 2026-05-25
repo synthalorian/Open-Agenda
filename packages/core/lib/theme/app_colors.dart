@@ -14,11 +14,26 @@ class AppColors {
   static const Color neonOrange = Color(0xFFFF6B35);
   static const Color neonYellow = Color(0xFFFFD60A);
 
-  // Background Colors - Dark Mode (Primary)
-  static const Color darkBackground = Color(0xFF0A0A0F);
-  static const Color darkSurface = Color(0xFF14141F);
-  static const Color darkCard = Color(0xFF1A1A2E);
-  static const Color darkElevated = Color(0xFF252540);
+  // Synthwave '84 Palette (matches Omarchy dark theme)
+  static const Color sw84Background = Color(0xFF240037);
+  static const Color sw84Surface = Color(0xFF1A002A);
+  static const Color sw84Card = Color(0xFF2D0045);
+  static const Color sw84Elevated = Color(0xFF3A0058);
+  static const Color sw84Purple = Color(0xFF8F00FF);
+  static const Color sw84Yellow = Color(0xFFF3E70F);
+  static const Color sw84Pink = Color(0xFFFF00FF);
+  static const Color sw84PinkSoft = Color(0xFFFF7EDB);
+  static const Color sw84Cyan = Color(0xFF03EDF9);
+  static const Color sw84Blue = Color(0xFF0080FF);
+  static const Color sw84Red = Color(0xFFFF0040);
+  static const Color sw84Text = Color(0xFFFFFFFF);
+  static const Color sw84TextDim = Color(0xFFB0A0C0);
+
+  // Background Colors - Dark Mode (Synthwave '84)
+  static const Color darkBackground = Color(0xFF240037);
+  static const Color darkSurface = Color(0xFF1A002A);
+  static const Color darkCard = Color(0xFF2D0045);
+  static const Color darkElevated = Color(0xFF3A0058);
 
   // Background Colors - Light Mode
   static const Color lightBackground = Color(0xFFFAFAFA);
@@ -28,22 +43,29 @@ class AppColors {
 
   // Gradient Definitions
   static const LinearGradient neonGradient = LinearGradient(
-    colors: [Color(0xFF4F46E5), neonPurple, neonCyan],  // Indigo → Purple → Cyan
+    colors: [sw84Purple, sw84Pink, sw84Cyan],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const LinearGradient sunsetGradient = LinearGradient(
-    colors: [neonOrange, Color(0xFF4F46E5), neonPurple],
+    colors: [neonOrange, sw84Pink, sw84Purple],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
 
   static const LinearGradient synthwaveGradient = LinearGradient(
-    colors: [neonPurple, Color(0xFF4F46E5), neonCyan],
+    colors: [sw84Purple, sw84Pink, sw84Yellow],
     begin: Alignment(-1, -1),
     end: Alignment(1, 1),
     stops: [0.0, 0.5, 1.0],
+  );
+
+  // Synthwave '84 gradient for dark theme
+  static const LinearGradient sw84Gradient = LinearGradient(
+    colors: [sw84Purple, sw84Pink, sw84Cyan],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
   );
 
   // Glassmorphism
@@ -79,29 +101,29 @@ class AppColors {
   static const Color goalColor = Color(0xFF00FF88);
 }
 
-/// Dark Theme Color Scheme
+/// Synthwave '84 Dark Theme Color Scheme
 class DarkColorScheme extends ColorScheme {
   DarkColorScheme()
       : super(
           brightness: Brightness.dark,
-          primary: AppColors.neonPink,
-          onPrimary: AppColors.textPrimary,
-          primaryContainer: AppColors.darkElevated,
-          onPrimaryContainer: AppColors.neonPink,
-          secondary: AppColors.neonCyan,
-          onSecondary: AppColors.darkBackground,
-          secondaryContainer: AppColors.darkElevated,
-          onSecondaryContainer: AppColors.neonCyan,
-          tertiary: AppColors.neonPurple,
-          onTertiary: AppColors.textPrimary,
-          surface: AppColors.darkSurface,
-          onSurface: AppColors.textPrimary,
-          surfaceContainerHighest: AppColors.darkCard,
-          error: AppColors.error,
-          onError: AppColors.textPrimary,
-          errorContainer: AppColors.darkElevated,
-          outline: AppColors.glassBorder,
-          outlineVariant: AppColors.textTertiary,
+          primary: AppColors.sw84Purple,
+          onPrimary: AppColors.sw84Text,
+          primaryContainer: AppColors.sw84Elevated,
+          onPrimaryContainer: AppColors.sw84Purple,
+          secondary: AppColors.sw84Yellow,
+          onSecondary: AppColors.sw84Background,
+          secondaryContainer: AppColors.sw84Elevated,
+          onSecondaryContainer: AppColors.sw84Yellow,
+          tertiary: AppColors.sw84Pink,
+          onTertiary: AppColors.sw84Text,
+          surface: AppColors.sw84Surface,
+          onSurface: AppColors.sw84Text,
+          surfaceContainerHighest: AppColors.sw84Card,
+          error: AppColors.sw84Red,
+          onError: AppColors.sw84Text,
+          errorContainer: AppColors.sw84Elevated,
+          outline: AppColors.sw84Purple.withAlpha(51),
+          outlineVariant: AppColors.sw84TextDim,
         );
 }
 
