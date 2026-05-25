@@ -13,12 +13,6 @@ void main() async {
   // Initialize Hive local storage
   await HiveService.init();
 
-  // Seed sample data in debug mode
-  assert(() {
-    SeedData.seedIfEmpty();
-    return true;
-  }());
-
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

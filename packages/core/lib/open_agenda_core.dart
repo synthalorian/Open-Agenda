@@ -28,7 +28,6 @@ export 'models/teacher_profile.dart';
 // Data Layer
 export 'data/base_repository.dart';
 export 'data/hive_service.dart';
-export 'data/seed_data.dart';
 export 'data/repositories/student_repository.dart';
 export 'data/repositories/grade_repository.dart';
 export 'data/repositories/attendance_repository.dart';
