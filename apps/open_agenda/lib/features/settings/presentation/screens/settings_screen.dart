@@ -29,7 +29,7 @@ class SettingsScreen extends ConsumerWidget {
                   children: [
                     CircleAvatar(
                       radius: 24,
-                      backgroundColor: AppColors.neonPurple.withOpacity(0.3),
+                      backgroundColor: AppColors.neonPurple.withValues(alpha: 0.3),
                       child: const Icon(Icons.person,
                           color: AppColors.neonPurple),
                     ),

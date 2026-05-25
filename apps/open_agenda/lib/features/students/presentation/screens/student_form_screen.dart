@@ -188,7 +188,7 @@ class _StudentFormScreenState extends ConsumerState<StudentFormScreen> {
                       children: [
                         Expanded(
                           child: DropdownButtonFormField<int>(
-                            value: _grade,
+                            initialValue: _grade,
                             decoration: const InputDecoration(
                                 labelText: 'Grade',
                                 prefixIcon: Icon(Icons.school_outlined)),
@@ -204,7 +204,7 @@ class _StudentFormScreenState extends ConsumerState<StudentFormScreen> {
                         const SizedBox(width: 16),
                         Expanded(
                           child: DropdownButtonFormField<String>(
-                            value: _section,
+                            initialValue: _section,
                             decoration: const InputDecoration(
                                 labelText: 'Section',
                                 prefixIcon: Icon(Icons.group_outlined)),

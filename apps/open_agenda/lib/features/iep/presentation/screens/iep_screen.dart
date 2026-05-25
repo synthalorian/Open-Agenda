@@ -47,7 +47,7 @@ class IEPDashboardScreen extends ConsumerWidget {
                     selected: isSelected,
                     onSelected: (_) =>
                         ref.read(iepGoalFilterProvider.notifier).state = f,
-                    selectedColor: AppColors.iepColor.withOpacity(0.3),
+                    selectedColor: AppColors.iepColor.withValues(alpha: 0.3),
                     checkmarkColor: AppColors.iepColor,
                     side: BorderSide(
                       color: isSelected
@@ -102,7 +102,7 @@ class IEPDashboardScreen extends ConsumerWidget {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 8, vertical: 2),
                                 decoration: BoxDecoration(
-                                  color: AppColors.iepColor.withOpacity(0.2),
+                                  color: AppColors.iepColor.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(

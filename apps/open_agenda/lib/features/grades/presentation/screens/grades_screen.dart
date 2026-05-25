@@ -78,7 +78,7 @@ class GradesScreen extends ConsumerWidget {
                     selectedColor: (s != null
                             ? _subjectColor(s)
                             : AppColors.neonCyan)
-                        .withOpacity(0.3),
+                        .withValues(alpha: 0.3),
                     side: BorderSide(
                       color: isSelected
                           ? (s != null

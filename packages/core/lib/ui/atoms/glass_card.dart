@@ -105,14 +105,14 @@ class _GlassCardState extends State<GlassCard>
               borderRadius: BorderRadius.circular(widget.borderRadius),
               border: Border.all(
                 color: _isHovered && widget.onTap != null
-                    ? borderColor.withOpacity(0.8)
+                    ? borderColor.withValues(alpha: 0.8)
                     : borderColor,
                 width: 1,
               ),
               boxShadow: widget.enableGlow
                   ? [
                       BoxShadow(
-                        color: glowColor.withOpacity(
+                        color: glowColor.withValues(alpha:
                           _glowAnimation.value * widget.glowIntensity,
                         ),
                         blurRadius: _isHovered ? 20 : 15,
@@ -240,14 +240,14 @@ class StatCard extends StatelessWidget {
               shape: BoxShape.circle,
               gradient: LinearGradient(
                 colors: [
-                  cardColor.withOpacity(0.3),
-                  cardColor.withOpacity(0.1),
+                  cardColor.withValues(alpha: 0.3),
+                  cardColor.withValues(alpha: 0.1),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               border: Border.all(
-                color: cardColor.withOpacity(0.5),
+                color: cardColor.withValues(alpha: 0.5),
                 width: 2,
               ),
             ),

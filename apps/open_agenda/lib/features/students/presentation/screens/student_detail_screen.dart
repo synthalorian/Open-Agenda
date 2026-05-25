@@ -90,14 +90,14 @@ class StudentDetailScreen extends ConsumerWidget {
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
                             colors: [
-                              color.withOpacity(0.4),
-                              color.withOpacity(0.15)
+                              color.withValues(alpha: 0.4),
+                              color.withValues(alpha: 0.15)
                             ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
                           border: Border.all(
-                              color: color.withOpacity(0.7), width: 3),
+                              color: color.withValues(alpha: 0.7), width: 3),
                         ),
                         child: Center(
                           child: Text(
@@ -132,11 +132,11 @@ class StudentDetailScreen extends ConsumerWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 14, vertical: 6),
                           decoration: BoxDecoration(
-                            color: AppColors.iepColor.withOpacity(0.15),
+                            color: AppColors.iepColor.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
                                 color:
-                                    AppColors.iepColor.withOpacity(0.4)),
+                                    AppColors.iepColor.withValues(alpha: 0.4)),
                           ),
                           child: const Row(
                             mainAxisSize: MainAxisSize.min,
@@ -251,7 +251,7 @@ class _InfoRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, size: 18, color: AppColors.neonCyan.withOpacity(0.7)),
+        Icon(icon, size: 18, color: AppColors.neonCyan.withValues(alpha: 0.7)),
         const SizedBox(width: 12),
         Expanded(
           child: Column(

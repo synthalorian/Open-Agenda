@@ -100,7 +100,7 @@ class AttendanceTrendChart extends StatelessWidget {
                     drawVerticalLine: false,
                     horizontalInterval: 25,
                     getDrawingHorizontalLine: (value) => FlLine(
-                      color: AppColors.glassBorder.withOpacity(0.3),
+                      color: AppColors.glassBorder.withValues(alpha: 0.3),
                       strokeWidth: 0.5,
                     ),
                   ),
@@ -130,8 +130,8 @@ class AttendanceTrendChart extends StatelessWidget {
                         show: true,
                         gradient: LinearGradient(
                           colors: [
-                            AppColors.neonCyan.withOpacity(0.3),
-                            AppColors.neonCyan.withOpacity(0.0),
+                            AppColors.neonCyan.withValues(alpha: 0.3),
+                            AppColors.neonCyan.withValues(alpha: 0.0),
                           ],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,

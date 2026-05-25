@@ -292,9 +292,19 @@ const List<NavigationDestination> bottomNavDestinations = [
     label: 'Attendance',
   ),
   NavigationDestination(
+    icon: Icon(Icons.menu_book_outlined),
+    selectedIcon: Icon(Icons.menu_book),
+    label: 'Planning',
+  ),
+  NavigationDestination(
     icon: Icon(Icons.school_outlined),
     selectedIcon: Icon(Icons.school),
     label: 'IEP',
+  ),
+  NavigationDestination(
+    icon: Icon(Icons.settings_outlined),
+    selectedIcon: Icon(Icons.settings),
+    label: 'Settings',
   ),
 ];
 
@@ -303,6 +313,8 @@ int getCurrentNavIndex(String path) {
   if (path.startsWith('/students')) return 1;
   if (path.startsWith('/grades')) return 2;
   if (path.startsWith('/attendance')) return 3;
-  if (path.startsWith('/iep')) return 4;
+  if (path.startsWith('/planning')) return 4;
+  if (path.startsWith('/iep')) return 5;
+  if (path.startsWith('/settings')) return 6;
   return 0;
 }

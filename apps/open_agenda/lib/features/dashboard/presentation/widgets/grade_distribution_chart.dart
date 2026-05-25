@@ -103,7 +103,7 @@ class GradeDistributionChart extends StatelessWidget {
                     drawVerticalLine: false,
                     horizontalInterval: _yInterval(buckets),
                     getDrawingHorizontalLine: (value) => FlLine(
-                      color: AppColors.glassBorder.withOpacity(0.3),
+                      color: AppColors.glassBorder.withValues(alpha: 0.3),
                       strokeWidth: 0.5,
                     ),
                   ),

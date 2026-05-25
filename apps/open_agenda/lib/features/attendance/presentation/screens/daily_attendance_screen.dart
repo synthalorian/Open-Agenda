@@ -90,7 +90,7 @@ class _DailyAttendanceScreenState
                                   height: 36,
                                   decoration: BoxDecoration(
                                     color: isSelected
-                                        ? color.withOpacity(0.3)
+                                        ? color.withValues(alpha: 0.3)
                                         : Colors.transparent,
                                     borderRadius:
                                         BorderRadius.circular(8),

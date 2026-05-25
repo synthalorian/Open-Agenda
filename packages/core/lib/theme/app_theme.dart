@@ -245,12 +245,14 @@ class AppTheme {
         ),
         navigationBarTheme: NavigationBarThemeData(
           backgroundColor: AppColors.darkSurface,
-          indicatorColor: AppColors.neonPink.withOpacity(0.2),
+          indicatorColor: AppColors.neonPink.withValues(alpha: 0.2),
           elevation: 0,
-          height: 80,
+          height: 72,
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          indicatorShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           labelTextStyle: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.selected)) {
-              return _textTheme.labelSmall?.copyWith(color: AppColors.neonPink);
+              return _textTheme.labelSmall?.copyWith(color: AppColors.neonPink, fontWeight: FontWeight.w700);
             }
             return _textTheme.labelSmall?.copyWith(color: AppColors.textTertiary);
           }),
@@ -307,7 +309,7 @@ class AppTheme {
           activeTrackColor: AppColors.neonPink,
           inactiveTrackColor: AppColors.darkElevated,
           thumbColor: AppColors.neonPink,
-          overlayColor: AppColors.neonPink.withOpacity(0.2),
+          overlayColor: AppColors.neonPink.withValues(alpha: 0.2),
           valueIndicatorColor: AppColors.neonPink,
           valueIndicatorTextStyle: _textTheme.labelSmall?.copyWith(
             color: AppColors.textPrimary,
@@ -322,7 +324,7 @@ class AppTheme {
           }),
           trackColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.selected)) {
-              return AppColors.neonPink.withOpacity(0.5);
+              return AppColors.neonPink.withValues(alpha: 0.5);
             }
             return AppColors.darkElevated;
           }),
@@ -461,7 +463,7 @@ class AppTheme {
             color: AppColors.textDarkSecondary,
           ),
           hintStyle: _textTheme.bodyMedium?.copyWith(
-            color: AppColors.textDarkSecondary.withOpacity(0.6),
+            color: AppColors.textDarkSecondary.withValues(alpha: 0.6),
           ),
           prefixIconColor: AppColors.textDarkSecondary,
           suffixIconColor: AppColors.textDarkSecondary,
@@ -506,12 +508,14 @@ class AppTheme {
         ),
         navigationBarTheme: NavigationBarThemeData(
           backgroundColor: AppColors.lightSurface,
-          indicatorColor: AppColors.neonPink.withOpacity(0.15),
+          indicatorColor: AppColors.neonPink.withValues(alpha: 0.15),
           elevation: 0,
-          height: 80,
+          height: 72,
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          indicatorShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           labelTextStyle: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.selected)) {
-              return _textTheme.labelSmall?.copyWith(color: AppColors.neonPink);
+              return _textTheme.labelSmall?.copyWith(color: AppColors.neonPink, fontWeight: FontWeight.w700);
             }
             return _textTheme.labelSmall?.copyWith(color: AppColors.textDarkSecondary);
           }),
@@ -568,7 +572,7 @@ class AppTheme {
           activeTrackColor: AppColors.neonPink,
           inactiveTrackColor: AppColors.lightElevated,
           thumbColor: AppColors.neonPink,
-          overlayColor: AppColors.neonPink.withOpacity(0.15),
+          overlayColor: AppColors.neonPink.withValues(alpha: 0.15),
           valueIndicatorColor: AppColors.neonPink,
           valueIndicatorTextStyle: _textTheme.labelSmall?.copyWith(
             color: AppColors.textPrimary,
@@ -583,7 +587,7 @@ class AppTheme {
           }),
           trackColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.selected)) {
-              return AppColors.neonPink.withOpacity(0.5);
+              return AppColors.neonPink.withValues(alpha: 0.5);
             }
             return AppColors.lightElevated;
           }),

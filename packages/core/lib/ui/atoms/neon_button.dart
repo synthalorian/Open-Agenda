@@ -91,7 +91,7 @@ class _NeonButtonState extends State<NeonButton>
                       : LinearGradient(
                           colors: [
                             buttonColor,
-                            buttonColor.withOpacity(0.8),
+                            buttonColor.withValues(alpha: 0.8),
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -104,7 +104,7 @@ class _NeonButtonState extends State<NeonButton>
                       ? null
                       : [
                           BoxShadow(
-                            color: buttonColor.withOpacity(
+                            color: buttonColor.withValues(alpha:
                               _isHovered ? 0.6 : 0.4,
                             ),
                             blurRadius: _glowAnimation.value,
@@ -247,7 +247,7 @@ class _NeonIconButtonState extends State<NeonIconButton>
               gradient: LinearGradient(
                 colors: [
                   buttonColor,
-                  buttonColor.withOpacity(0.7),
+                  buttonColor.withValues(alpha: 0.7),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -256,7 +256,7 @@ class _NeonIconButtonState extends State<NeonIconButton>
                   ? null
                   : [
                       BoxShadow(
-                        color: buttonColor.withOpacity(
+                        color: buttonColor.withValues(alpha:
                           _isHovered ? 0.6 : 0.4,
                         ),
                         blurRadius: _glowAnimation.value,

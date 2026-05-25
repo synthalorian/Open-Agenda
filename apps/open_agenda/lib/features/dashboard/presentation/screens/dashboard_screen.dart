@@ -59,7 +59,7 @@ class DashboardScreen extends ConsumerWidget {
                                         .bodyLarge
                                         ?.copyWith(
                                           color: AppColors.textPrimary
-                                              .withOpacity(0.8),
+                                              .withValues(alpha: 0.8),
                                         ),
                                   ),
                                   const SizedBox(height: 4),
@@ -92,7 +92,7 @@ class DashboardScreen extends ConsumerWidget {
                                 .titleLarge
                                 ?.copyWith(
                                   color: AppColors.textPrimary
-                                      .withOpacity(0.9),
+                                      .withValues(alpha: 0.9),
                                 ),
                           ),
                           const SizedBox(height: 16),
@@ -460,7 +460,7 @@ class _ChartPlaceholder extends StatelessWidget {
         height: 200,
         child: Center(
           child: CircularProgressIndicator(
-            color: AppColors.neonCyan.withOpacity(0.5),
+            color: AppColors.neonCyan.withValues(alpha: 0.5),
             strokeWidth: 2,
           ),
         ),

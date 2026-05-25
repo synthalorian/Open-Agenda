@@ -6,7 +6,7 @@ class AppColors {
   AppColors._();
 
   // Primary Neon Colors
-  static const Color neonPink = Color(0xFFFF006E);
+  static const Color neonPink = Color(0xFF4F46E5);      // Indigo - professional primary for EdTech
   static const Color neonCyan = Color(0xFF00F5FF);
   static const Color neonPurple = Color(0xFF8B5CF6);
   static const Color neonBlue = Color(0xFF3B82F6);
@@ -28,19 +28,19 @@ class AppColors {
 
   // Gradient Definitions
   static const LinearGradient neonGradient = LinearGradient(
-    colors: [neonPink, neonPurple, neonCyan],
+    colors: [Color(0xFF4F46E5), neonPurple, neonCyan],  // Indigo → Purple → Cyan
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const LinearGradient sunsetGradient = LinearGradient(
-    colors: [neonOrange, neonPink, neonPurple],
+    colors: [neonOrange, Color(0xFF4F46E5), neonPurple],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
 
   static const LinearGradient synthwaveGradient = LinearGradient(
-    colors: [neonPurple, neonPink, neonCyan],
+    colors: [neonPurple, Color(0xFF4F46E5), neonCyan],
     begin: Alignment(-1, -1),
     end: Alignment(1, 1),
     stops: [0.0, 0.5, 1.0],

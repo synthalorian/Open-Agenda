@@ -99,7 +99,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         children: [
           Icon(Icons.school,
               size: 80,
-              color: AppColors.neonPurple.withOpacity(0.8)),
+              color: AppColors.neonPurple.withValues(alpha: 0.8)),
           const SizedBox(height: 24),
           Text(
             'Open Agenda',
