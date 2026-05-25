@@ -117,23 +117,22 @@ class SettingsScreen extends ConsumerWidget {
                 ListTile(
                   leading: const Icon(Icons.refresh,
                       color: AppColors.neonOrange),
-                  title: const Text('Reset Sample Data'),
-                  subtitle: const Text('Clear and re-seed demo data'),
+                  title: const Text('Clear All Data'),
+                  subtitle: const Text('Wipe all students, grades, and settings'),
                   onTap: () => _confirmAction(
                     context,
-                    'Reset Sample Data',
-                    'This will delete all data and re-seed with demo data.',
+                    'Clear All Data',
+                    'This will permanently delete all your data and reset everything to blank.',
                     () async {
                       await HiveService.clearAll();
                       await HiveService.init();
-                      await SeedData.seedIfEmpty();
                       ref.invalidate(allStudentsProvider);
                       ref.invalidate(allAssignmentsProvider);
                       ref.invalidate(settingsTeacherProfileProvider);
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                              content: Text('Data reset complete')),
+                              content: Text('All data cleared')),
                         );
                       }
                     },
