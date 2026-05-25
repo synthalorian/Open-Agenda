@@ -114,7 +114,7 @@ class SubjectPerformanceChart extends StatelessWidget {
                     drawVerticalLine: false,
                     horizontalInterval: 25,
                     getDrawingHorizontalLine: (value) => FlLine(
-                      color: AppColors.glassBorder.withOpacity(0.3),
+                      color: AppColors.glassBorder.withValues(alpha: 0.3),
                       strokeWidth: 0.5,
                     ),
                   ),
@@ -131,7 +131,7 @@ class SubjectPerformanceChart extends StatelessWidget {
                               top: Radius.circular(6)),
                           gradient: LinearGradient(
                             colors: [
-                              color.withOpacity(0.7),
+                              color.withValues(alpha: 0.7),
                               color,
                             ],
                             begin: Alignment.bottomCenter,

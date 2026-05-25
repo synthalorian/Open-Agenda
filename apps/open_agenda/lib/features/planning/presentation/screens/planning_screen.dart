@@ -67,7 +67,7 @@ class PlanningScreen extends ConsumerWidget {
             calendarStyle: CalendarStyle(
               outsideDaysVisible: false,
               todayDecoration: BoxDecoration(
-                color: AppColors.neonPurple.withOpacity(0.3),
+                color: AppColors.neonPurple.withValues(alpha: 0.3),
                 shape: BoxShape.circle,
               ),
               selectedDecoration: const BoxDecoration(
@@ -82,7 +82,7 @@ class PlanningScreen extends ConsumerWidget {
               markersMaxCount: 3,
               defaultTextStyle: const TextStyle(color: AppColors.textPrimary),
               weekendTextStyle:
-                  TextStyle(color: AppColors.textPrimary.withOpacity(0.5)),
+                  TextStyle(color: AppColors.textPrimary.withValues(alpha: 0.5)),
             ),
             headerStyle: const HeaderStyle(
               formatButtonVisible: false,

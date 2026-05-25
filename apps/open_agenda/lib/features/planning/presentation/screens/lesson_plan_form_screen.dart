@@ -127,7 +127,7 @@ class _LessonPlanFormScreenState
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: _subject,
+              initialValue: _subject,
               decoration: const InputDecoration(labelText: 'Subject'),
               items: ['Math', 'Science', 'English', 'History']
                   .map((s) => DropdownMenuItem(value: s, child: Text(s)))

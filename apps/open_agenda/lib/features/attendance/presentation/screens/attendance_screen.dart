@@ -76,7 +76,7 @@ class AttendanceScreen extends ConsumerWidget {
             calendarStyle: CalendarStyle(
               outsideDaysVisible: false,
               todayDecoration: BoxDecoration(
-                color: AppColors.neonGreen.withOpacity(0.3),
+                color: AppColors.neonGreen.withValues(alpha: 0.3),
                 shape: BoxShape.circle,
               ),
               selectedDecoration: const BoxDecoration(
@@ -92,7 +92,7 @@ class AttendanceScreen extends ConsumerWidget {
               defaultTextStyle:
                   const TextStyle(color: AppColors.textPrimary),
               weekendTextStyle: TextStyle(
-                  color: AppColors.textPrimary.withOpacity(0.5)),
+                  color: AppColors.textPrimary.withValues(alpha: 0.5)),
             ),
             headerStyle: const HeaderStyle(
               formatButtonVisible: false,

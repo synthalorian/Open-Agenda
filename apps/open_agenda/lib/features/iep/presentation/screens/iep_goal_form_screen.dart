@@ -111,7 +111,7 @@ class _IEPGoalFormScreenState extends ConsumerState<IEPGoalFormScreen> {
                 final displayStudents =
                     iepStudents.isEmpty ? allStudents : iepStudents;
                 return DropdownButtonFormField<String>(
-                  value: _selectedStudentId,
+                  initialValue: _selectedStudentId,
                   decoration:
                       const InputDecoration(labelText: 'Student'),
                   items: displayStudents
@@ -127,7 +127,7 @@ class _IEPGoalFormScreenState extends ConsumerState<IEPGoalFormScreen> {
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: _category,
+              initialValue: _category,
               decoration: const InputDecoration(labelText: 'Category'),
               items: [
                 'Reading',

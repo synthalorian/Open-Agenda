@@ -28,12 +28,12 @@ class MainShell extends StatelessWidget {
             end: Alignment.bottomCenter,
             colors: [
               Colors.transparent,
-              AppColors.darkBackground.withOpacity(0.95),
+              AppColors.darkBackground.withValues(alpha: 0.95),
             ],
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.neonPink.withOpacity(0.1),
+              color: AppColors.neonPink.withValues(alpha: 0.1),
               blurRadius: 20,
               spreadRadius: -5,
             ),
@@ -47,7 +47,9 @@ class MainShell extends StatelessWidget {
               '/students',
               '/grades',
               '/attendance',
+              '/planning',
               '/iep',
+              '/settings',
             ];
             context.go(routes[index]);
           },
@@ -55,7 +57,7 @@ class MainShell extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           height: 70,
-          indicatorColor: AppColors.neonPink.withOpacity(0.15),
+          indicatorColor: AppColors.neonPink.withValues(alpha: 0.15),
           surfaceTintColor: Colors.transparent,
         ),
       ),
@@ -173,7 +175,7 @@ class _NeonFABState extends State<_NeonFAB>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.neonPink.withOpacity(_isHovered ? 0.7 : 0.5),
+                  color: AppColors.neonPink.withValues(alpha: _isHovered ? 0.7 : 0.5),
                   blurRadius: _glowAnimation.value,
                   spreadRadius: _isHovered ? 2 : 0,
                 ),

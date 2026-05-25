@@ -97,7 +97,7 @@ class _AssignmentFormScreenState
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: _subject,
+              initialValue: _subject,
               decoration: const InputDecoration(labelText: 'Subject'),
               items: ['Math', 'Science', 'English', 'History']
                   .map((s) =>
@@ -139,7 +139,7 @@ class _AssignmentFormScreenState
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<AssignmentCategory>(
-              value: _category,
+              initialValue: _category,
               decoration:
                   const InputDecoration(labelText: 'Category'),
               items: AssignmentCategory.values

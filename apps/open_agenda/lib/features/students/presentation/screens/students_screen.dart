@@ -92,7 +92,7 @@ class StudentsScreen extends ConsumerWidget {
                               onPressed: (_) => context
                                   .push('/students/${student.id}/edit'),
                               backgroundColor:
-                                  AppColors.neonCyan.withOpacity(0.15),
+                                  AppColors.neonCyan.withValues(alpha: 0.15),
                               foregroundColor: AppColors.neonCyan,
                               icon: Icons.edit_outlined,
                               label: 'Edit',
@@ -103,7 +103,7 @@ class StudentsScreen extends ConsumerWidget {
                               onPressed: (_) =>
                                   _confirmDelete(context, ref, student),
                               backgroundColor:
-                                  AppColors.error.withOpacity(0.15),
+                                  AppColors.error.withValues(alpha: 0.15),
                               foregroundColor: AppColors.error,
                               icon: Icons.delete_outline,
                               label: 'Delete',
@@ -127,14 +127,14 @@ class StudentsScreen extends ConsumerWidget {
                                   shape: BoxShape.circle,
                                   gradient: LinearGradient(
                                     colors: [
-                                      color.withOpacity(0.4),
-                                      color.withOpacity(0.15)
+                                      color.withValues(alpha: 0.4),
+                                      color.withValues(alpha: 0.15)
                                     ],
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                   ),
                                   border: Border.all(
-                                      color: color.withOpacity(0.6),
+                                      color: color.withValues(alpha: 0.6),
                                       width: 2),
                                 ),
                                 child: Center(
@@ -181,11 +181,11 @@ class StudentsScreen extends ConsumerWidget {
                                       horizontal: 10, vertical: 4),
                                   decoration: BoxDecoration(
                                     color:
-                                        AppColors.iepColor.withOpacity(0.15),
+                                        AppColors.iepColor.withValues(alpha: 0.15),
                                     borderRadius: BorderRadius.circular(8),
                                     border: Border.all(
                                         color: AppColors.iepColor
-                                            .withOpacity(0.4)),
+                                            .withValues(alpha: 0.4)),
                                   ),
                                   child: const Text(
                                     'IEP',
