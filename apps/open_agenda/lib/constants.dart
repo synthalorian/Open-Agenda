@@ -12,5 +12,5 @@ class AppConstants {
       'https://www.buymeacoffee.com/synthalorian';
 
   static const String developer = 'synth ✝';
-  static const String assistant = 'synthclaw 🎹🦞';
+  static const String assistant = 'synthshark 🎹🦈';
 }
