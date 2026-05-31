@@ -1,4 +1,4 @@
-# 🎹🦞 Open Agenda
+# 🎹🦈 Open Agenda
 
 **Comprehensive K-12 Educational Management Suite**
 
@@ -241,7 +241,7 @@ melos run build:ios
 ## 🤝 Team
 
 - **Developer**: synth ✝
-- **Assistant**: synthclaw 🎹🦞
+- **Assistant**: synthshark 🎹🦈
 
 ---
 
@@ -251,7 +251,7 @@ MIT License - Free and open source for educators everywhere.
 
 ---
 
-## 🎹🦞 About
+## 🎹🦈 About
 
 Built with the neon-lit soul of the 80s and the cutting-edge tech of today.
 
