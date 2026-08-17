@@ -89,7 +89,7 @@ open-agenda/
 
 ```bash
 # Clone the repository
-cd /home/synthalorian 🎹🤺/projects/open-agenda
+cd /home/synth/projects/open-agenda
 
 # Install Melos globally (if not already)
 dart pub global activate melos
@@ -240,7 +240,7 @@ melos run build:ios
 
 ## 🤝 Team
 
-- **Developer**: synthalorian 🎹🤺 ✝
+- **Developer**: synth ✝
 - **Assistant**: synthshark 🎹🦈
 
 ---
