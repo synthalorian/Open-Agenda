@@ -267,3 +267,11 @@ Built with the neon-lit soul of the 80s and the cutting-edge tech of today.
 3. Build attendance system
 4. Set up backend API
 5. Deploy beta version
+
+---
+
+## ☕ Support the Developer
+
+If this project saved you time, solved a problem, or just made your day a little more neon, you can fuel the next one:
+
+[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://buymeacoffee.com/synthalorian)
