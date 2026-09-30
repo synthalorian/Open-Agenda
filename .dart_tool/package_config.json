@@ -231,8 +231,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.11.5",
-  "flutterRoot": "file:///home/synth/.local/share/mise/installs/flutter/3.41.9-stable",
-  "flutterVersion": "3.41.9",
+  "generatorVersion": "3.13.3",
+  "flutterRoot": "file:///home/synth/.local/share/flutter",
+  "flutterVersion": "3.47.3",
   "pubCache": "file:///home/synth/.pub-cache"
 }

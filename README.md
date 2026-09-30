@@ -241,7 +241,6 @@ melos run build:ios
 ## 🤝 Team
 
 - **Developer**: synth ✝
-- **Assistant**: synthshark 🎹🦈
 
 ---
 
