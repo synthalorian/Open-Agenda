@@ -1,3 +1,5 @@
+![Open-Agenda](.github/preview.png)
+
 # 🎹🦈 Open Agenda
 
 **Comprehensive K-12 Educational Management Suite**
